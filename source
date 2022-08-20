@@ -1,3 +1,5 @@
+local module = {}
+
 local list = {
     [1] = {
         response = "The OK button was selected"
@@ -27,3 +29,11 @@ local list = {
         response = "The Continue button was selected."
     }
 }
+
+function module:DisplayMsg(Title, Description, Type)
+    local state = messagebox(Description, Title, Type)
+    return state -- remember state is a number, at Synapse docs you'll see more.
+    -- short explaining: number is equevelent to what button you pressed / information with it.
+end
+
+return module
